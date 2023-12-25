@@ -26,6 +26,7 @@ app = FastAPI()
 @app.post("/bandinfos")
 async def get_infos(filter:Filter):
     Info = Query()
-    query_data = table.search(Info.type==filter.type and Info.province==filter.province and Info.city==filter.city and Info.district==filter.district and Info.insts.any(filter.insts))
+    # query_data = table.search(Info.type==filter.type and Info.province==filter.province and Info.city==filter.city and Info.district==filter.district and Info.insts.any(filter.insts))
+    query_data = table.search((Info.type==filter.type) & (Info.province==filter.province) & (Info.city==filter.city) & (Info.district==filter.district) & (Info.insts.any(filter.insts)))
     search_result = query_data
     return search_result
