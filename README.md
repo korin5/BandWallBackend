@@ -1,6 +1,6 @@
 # BandWallBackend
 
-> 要求：Python 3.10+
+> 要求：Python 3.10.9
 
 搭建：
 `pip install fastapi pydantic tinydb "uvicorn[standard]"`
